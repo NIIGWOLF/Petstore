@@ -1,0 +1,54 @@
+[
+  {
+    "TestName": "Проверка без id",
+    "$.id": null
+  },
+  {
+    "TestName": "Проверка id = -1",
+    "$.id": -1
+  },
+  {
+    "TestName": "Проверка без category",
+    "$.category": null
+  },
+  {
+    "TestName": "Проверка без category.id",
+    "$.category.id": null
+  },
+  {
+    "TestName": "Проверка без category.name",
+    "$.category.name": null
+  },
+  {
+    "TestName": "Проверка без name",
+    "$.name": null
+  },
+  {
+    "TestName": "Проверка без photoUrls",
+    "$.photoUrls": null
+  },
+  {
+    "TestName": "Проверка c пустым photoUrls",
+    "$.photoUrls": []
+  },
+  {
+    "TestName": "Проверка без tags",
+    "$.tags": null
+  },
+  {
+    "TestName": "Проверка c пустым tags",
+    "$.tags": []
+  },
+  {
+    "TestName": "Проверка без tags[0].id",
+    "$.tags[0].id": null
+  },
+  {
+    "TestName": "Проверка без tags[0].name",
+    "$.tags[0].name": null
+  },
+  {
+    "TestName": "Проверка без status",
+    "$.status": null
+  }
+]
