@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 import static io.restassured.RestAssured.given;
 
-public class petGetFun {
+public class PetGetFun {
 
     public static Response sendRequest(BigDecimal id) {
         return given()

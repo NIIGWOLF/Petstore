@@ -1,7 +1,7 @@
-package tests.pet;
+package pet;
 
-import functions.pet.petDeleteFun;
-import functions.pet.petPostFun;
+import functions.pet.PetDeleteFun;
+import functions.pet.PetPostFun;
 import model.Pat;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,20 +12,20 @@ import java.math.BigDecimal;
 
 import static org.hamcrest.Matchers.equalTo;
 
-public class petDelete extends petDeleteFun {
+public class petDelete extends PetDeleteFun {
     Pat requestBody = new Pat();
     Pat responseBody;
 
     @BeforeEach
     public void beforeMethod() {
-        responseBody = petPostFun.sendRequest(UtilJson.serialize(requestBody))
+        responseBody = PetPostFun.sendRequest(UtilJson.serialize(requestBody))
                 .then()
                 .extract().body().as(Pat.class);
     }
 
     @AfterEach
     public void afterMethod() {
-        petDeleteFun.sendRequest(responseBody.id);
+        PetDeleteFun.sendRequest(responseBody.id);
     }
 
     @Test

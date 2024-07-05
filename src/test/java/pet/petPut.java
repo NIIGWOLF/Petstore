@@ -1,10 +1,10 @@
-package tests.pet;
+package pet;
 
-import functions.pet.petDeleteFun;
-import functions.pet.petPostFun;
+import functions.pet.PetDeleteFun;
+import functions.pet.PetPostFun;
 import utilsFun.UtilFiles;
 import utilsFun.UtilJson;
-import functions.pet.petPutFun;
+import functions.pet.PetPutFun;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import model.Pat;
 import org.junit.jupiter.api.AfterEach;
@@ -15,20 +15,20 @@ import org.junit.jupiter.params.provider.MethodSource;
 import static utilsFun.UtilJson.*;
 import static utilsFun.UtilJson.serialize;
 
-public class petPut extends petPutFun {
+public class petPut extends PetPutFun {
     Pat requestBody = new Pat();
     Pat responseBody;
 
     @BeforeEach
     public void beforeMethod() {
-        responseBody = petPostFun.sendRequest(UtilJson.serialize(requestBody))
+        responseBody = PetPostFun.sendRequest(UtilJson.serialize(requestBody))
                 .then()
                 .extract().body().as(Pat.class);
     }
 
     @AfterEach
     public void afterMethod() {
-        petDeleteFun.sendRequest(responseBody.id);
+        PetDeleteFun.sendRequest(responseBody.id);
     }
 
     @ParameterizedTest

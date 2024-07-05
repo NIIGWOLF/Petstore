@@ -20,10 +20,6 @@ dependencies {
     implementation("org.assertj:assertj-core:3.26.0")
     implementation("net.javacrumbs.json-unit:json-unit-assertj:3.4.0")
     implementation("com.github.javafaker:javafaker:1.0.2")
-
-
-
-
 }
 
 tasks.test {

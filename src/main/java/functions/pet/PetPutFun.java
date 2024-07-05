@@ -11,20 +11,21 @@ import java.util.Iterator;
 
 import static io.restassured.RestAssured.given;
 
-public class petPostFun {
+
+public class PetPutFun {
 
     public static Response sendRequest(String requestBody){
         return given()
                 .baseUri("https://petstore.swagger.io/v2")
                 .header("Content-Type", "application/json")
                 .body(requestBody)
-                .post("/pet")
+                .put("/pet")
                 .then()
                 .extract().response();
     }
 
     public static Iterator<Object[]> petWithoutFieldSuccessDataProvider() {
-        var file = UtilFiles.readFile("pet/petPost/testData/validSuccessDP.json");
+        var file = UtilFiles.readFile("pet/petPut/testData/validSuccessDP.json");
         JsonArray json = new Gson()
                 .fromJson(file, JsonArray.class);
         ArrayList<Object[]> array = new ArrayList<>();
